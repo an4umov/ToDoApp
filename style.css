@@ -161,5 +161,24 @@ span {
 	color: #A40E11;
 	font-weight: bold;
 }
+.mobile-mock {
+  display: none;
+}
 
-  
+@media (max-width: 1200px){
+  .container{
+    display: none;
+  }
+
+  .mobile-mock{
+    display:flex;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 250px;
+    color: #fff;
+    font-size: 35px;
+    padding: 10px;
+    text-align: center;
+  }
+}
