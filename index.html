@@ -9,18 +9,29 @@
     <title>ToDoApp</title>
 </head>
 <body>
+
 <div class="container">
+    <div class="info-text">
+        <p>&bull; Left click on Task: checked/unchecked;</p> 
+        <p>&bull; Right click: mark as <span>IMPORTANT</span>;</p> 
+        <p>&bull; AltKey + Right click: DELETE Task;</p> 
+     </div>   
    <div class="todo_app">
         <h1>ToDo list</h1>
        <div class="create_new_todo">
            <input type="text" class="message" placeholder="Describe your task here">
            <button class="add">Add a <b>new task</b></button>
        </div>
+       <div class="info-btn">
+           <h2>i</h2>
+       </div>  
    </div>
+
     <div class="todo_list">
         <ul class="todo"></ul>
     </div>
 </div>
+
 <script src='script.js'></script>
 </body>
 </html>

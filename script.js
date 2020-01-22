@@ -2,7 +2,9 @@
 
 let addMessage = document.querySelector('.message'),
     addButton = document.querySelector('.add'),
-    todo = document.querySelector('.todo');
+    todo = document.querySelector('.todo'),
+    infoBtn = document.querySelector('.info-btn'),
+    infoText = document.querySelector('.info-text');
 
 let todoList = [];
 
@@ -56,7 +58,7 @@ todo.addEventListener('contextmenu', function(event){
     event.preventDefault();
     todoList.forEach(function(item, i){
         if(item.todo === event.target.innerHTML){
-            if(event.ctrlKey || event.metaKey){
+            if(event.altKey || event.metaKey){
                 todoList.splice(i, 1);
             }else {
                 item.important = !item.important;
@@ -65,4 +67,12 @@ todo.addEventListener('contextmenu', function(event){
             localStorage.setItem('todo', JSON.stringify(todoList));
         }
     });
+});
+
+infoBtn.addEventListener('mouseover', function() {
+    infoText.style.display = 'flex';
+});
+
+infoBtn.addEventListener('mouseout', function() {
+    infoText.style.display = 'none';
 });
