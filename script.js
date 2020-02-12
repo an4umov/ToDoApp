@@ -14,17 +14,22 @@ if(localStorage.getItem('todo')){
 }
 
 addButton.addEventListener('click', function(){
+    if (addMessage.value == null || addMessage.value == '' ) {
+        alert('Describe your task first, my friend! =)');
+    } else {
+        let newTodo = {
+            todo: addMessage.value,
+            checked: false,
+            important: false
+        };
     
-    let newTodo = {
-        todo: addMessage.value,
-        checked: false,
-        important: false
-    };
-
-    todoList.push(newTodo);
-    displayMessages();
-    localStorage.setItem('todo', JSON.stringify(todoList));
-    addMessage.value = '';
+        todoList.push(newTodo);
+        displayMessages();
+        localStorage.setItem('todo', JSON.stringify(todoList));
+        addMessage.value = '';
+        
+    }
+    
 });
 
 function displayMessages(){
